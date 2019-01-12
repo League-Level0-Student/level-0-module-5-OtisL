@@ -1,6 +1,6 @@
 package algorithms;
 /*
- *    Copyright (c) The League of Amazing Programmers 2013-2017
+ *    Copyright (c) The League of Amazing Programmers 2013-2019
  *    Level 0
  */
 
@@ -8,7 +8,22 @@ import javax.swing.JOptionPane;
 
 public class GuessingPi {
 	// 1. Make a main method and make sure your program can run
-
+	public static void main(String[] args) {
+		String pi = "3.1415926535";
+		for(int i=0;i<4;i++) {
+			System.out.println(pi.charAt(i));
+		}
+		for (int j=4;j<pi.length();j++) {
+			//System.out.println(pi.charAt(j));
+			String next = JOptionPane.showInputDialog("What is the next digit of pi?");
+			if(next.equals(pi.charAt(j)+"")) {
+				System.out.println("Correct");
+			}else {
+				JOptionPane.showMessageDialog(null, "Oh No! It's Wrong! Try again.", "Incorrect", JOptionPane.ERROR_MESSAGE);
+				break;
+			}
+		}
+	}
 		// 2. Make a String variable to hold the value of Pi.
 		//    Get the first few digits from http://www.piday.org/million/.
 
